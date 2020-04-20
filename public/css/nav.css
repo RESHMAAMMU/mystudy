@@ -1,0 +1,50 @@
+.pink-bg {
+    background-color:blueviolet!important;
+    z-index: 1;
+}
+@media (min-width: 992px){
+.navbar-expand-lg .navbar-collapse {
+    display: flex!important;
+    flex-basis: auto;
+}
+}
+li.nav-item {
+    padding-right: 34px;
+    
+}
+@media only screen and (max-width: 600px) {
+    .home-header{
+        position: absolute !important;
+    }
+    .navbar-toggler{
+        margin: 0;
+        position: absolute;
+        top: 11px;
+        right: 13px;
+    }
+    .headertop{
+        margin: 0;
+        box-shadow: none;
+    }
+    .banner-title{
+        /* margin-top: 60px; */
+        display: inline-block;
+    } 
+
+    .hide{
+      display: none;
+    }
+    .home-head-title{
+      font-size: 1.7rem;
+      font-weight: 500 ;
+    }
+   .align-self-center{
+      margin-top: 50px;
+    }
+}
+a {
+    color: #ffff;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
