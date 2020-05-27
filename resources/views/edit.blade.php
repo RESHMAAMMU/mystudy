@@ -4,52 +4,29 @@
     <div class="row main">
         <div class="panel-heading">
            <div class="panel-title text-center">
-                   <h2 class="title">Registeration</h1>
+                   <h2 class="title">Update User</h1>
                    <hr/>
                </div>
         </div> 
         <div class="main-login main-center">
-            <form class="form-horizontal" method="post" action=" {{ route('user-create') }}">
+            <form class="form-horizontal" method="post" action=" {{ route('user-update',['id'=>$user->id]) }}">
                 @csrf
-                <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
+                <div class="form-group">
                     <label for="name" class="cols-sm-2 control-label">Name</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="name" id="name"  placeholder="Your Name"/>
-                            <br>
-                            <span class="text-danger">{{ $errors->first('name') }}</span>
+                            <input type="text" class="form-control" name="name" id="name" value="{{$user->name }}"/>
                         </div>
                     </div>
                 </div>
 
-                <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
+                <div class="form-group">
                     <label for="email" class="cols-sm-2 control-label">Email</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="email" id="email"  placeholder="Your Email"/>
-                            <br> <span class="text-danger">{{ $errors->first('email') }}</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
-                    <label for="name" class="cols-sm-2 control-label">Password</label>
-                    <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="password" id="password"  placeholder="Your Password"/>
-                            <br> <span class="text-danger">{{ $errors->first('password') }}</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
-                    <label for="name" class="cols-sm-2 control-label">ConformPassword</label>
-                    <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="confirm_password" id="password"  placeholder="Conform password"/>
-                            <br> <span class="text-danger">{{ $errors->first('confirm_password') }}</span>
+                            <input type="text" class="form-control" name="email" id="email"value="{{$user->email }}"/>
                         </div>
                     </div>
                 </div>
@@ -58,7 +35,16 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-mobile" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="address" id="address"  placeholder="Your Address"/>
+                            <input type="text" class="form-control"value="{{$user->address }}" name="address" id="address"  placeholder="Your Address"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="mobile" class="cols-sm-2 control-label required"></label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-mobile" aria-hidden="true"></i></span>
+                            <input type="file" class="form-control" name="img" id="img"  placeholder="Your Address"/>
                         </div>
                     </div>
                 </div>
